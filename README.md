@@ -75,4 +75,5 @@ SSH to other Nodes in the cluster from the Master:
 $ ssh node1
 $ ssh node2
 $ ssh node3
+
 ```
