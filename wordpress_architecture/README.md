@@ -18,7 +18,7 @@ There are sites like wordpress.com, SquareSpace, and Wix, that will host your si
 
 In its simplest form, we could run Wordpress on a single server like the diagram below. All we need is an EC2 instance running Wordpress, a simple VPC with an internet gateway, and DNS configured to point our domain name to this server.
 
-Basic Website Architecture
+**Basic Website Architecture**
 
 ![alt text](<https://nodeployfriday.com/images/posts/cost-effective-aws-architectures-for-wordpress-and-other-websites/01-Basic.png>)
 
@@ -43,13 +43,14 @@ In the simple setup, all of these functions are provided by the single EC2 host.
 Also, we need to know a little bit about PHP and how it works. Wordpress is written in PHP, which is a server-side scripting language. This means that as users visit the site, the PHP code loads data from the database and dynamically creates the HTML needed for our web browsers to show content. The web server has to compute the HTML code every time for every page visited by every user. For high traffic sites, this can be a lot of computation.
 
 **Assumptions & Cost Estimations**
+
 For this example, we need to make some assumptions. Let's say we are planning on building a personal blog with a healthy amount of traffic - around 10,000 visitors per month. This is a good amount of traffic for a personal blog or small business website, but still much less traffic than what some WordPress sites see. Costs for some of the services we add below are proportional to the traffic volume the site receives, while others are not dependent on traffic volume at all. I will point this out as we add the various services.
 
 EC2, RDS, and ElastiCache are all priced by instances and offer many different pricing options and payment plans. We will look at different instance types and sizes, but the price will always be based on the 1-year standard plan reserved instance. This will help us to compare apples to apples. However, you could potentially save more money with a different payment plan.
 
 Amazon also has different rates for some services based on region. For all the cost estimations in this post, I used the us-east-1 region prices, but this shouldn't affect things that much.
 
-# #1. The Simple Setup
+# 1. The Simple Setup
 
 The simple setup is Wordpress running on a single EC2 instance with your domain name pointed to your server's public IP address.
 
