@@ -44,3 +44,5 @@ ENIs can be migrated among instances. When we attach a secondary ENI to an insta
 Low-cost failover: We can detach ENI from a failed instance and attach it to a backup instance, traffic will be redirected to the backup instance. This allows quick recovery of services.
 Network management: We can configure multiple ENIs for an instance. For example, one ENI can be used for internal management and another ENI for internet business access to isolate management data from business data. Specific Security group rules can be configured for each ENI based on the source IP addresses, protocols, and ports. For example, Primary ENI eth0 handles the backend with more restrictive control and Secondary ENI eth1 handles the public-facing traffic.
 Configuration of multiple private IP addresses for a single instance: If multiple applications are managed on an instance, we can assign multiple secondary private IP addresses to an ENI so that each application will have an independent IP address.
+
+READ: https://blog.opstree.com/2022/03/01/aws-elastic-network-interface/
